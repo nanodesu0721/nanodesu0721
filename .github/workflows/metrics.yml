@@ -1,4 +1,4 @@
-name: Metrics
+name: metrics
 on:
   # Lines below let you run workflow manually and on each commit
   push: {branches: ["master", "main"]}
@@ -9,9 +9,11 @@ jobs:
     steps:
       # See action.yml for all options
       - uses: nanodesu0721/metrics@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           # Your GitHub token
-          token: ${{ secrets.METRICS_TOKEN }}
+          # token: ${{ secrets.METRICS_TOKEN }}
           # GITHUB_TOKEN is a special auto-generated token restricted to current repository, which is used to push files in it
           # committer_token: ${{ secrets.GITHUB_TOKEN }}
           
