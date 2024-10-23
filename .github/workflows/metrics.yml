@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # See action.yml for all options
-      - uses: nanodesu0721/metrics@master
+      - uses: lowlighter/metrics@v3.34
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
