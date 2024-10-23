@@ -5,16 +5,15 @@ on:
   workflow_dispatch:
 jobs:
   github-metrics:
-    # runs-on: ubuntu-latest
-    runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
+    runs-on: ubuntu-latest
     steps:
       # See action.yml for all options
-      - uses: lowlighter/metrics@latest
+      - uses: nanodesu0721/metrics@latest
         with:
           # Your GitHub token
           token: ${{ secrets.METRICS_TOKEN }}
           # GITHUB_TOKEN is a special auto-generated token restricted to current repository, which is used to push files in it
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          # committer_token: ${{ secrets.GITHUB_TOKEN }}
           
           # Coding habits
           plugin_habits: yes
