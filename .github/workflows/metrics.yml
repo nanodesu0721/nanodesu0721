@@ -9,7 +9,7 @@ jobs:
     runs-on: self-hosted
     steps:
       # See action.yml for all options
-      - uses: lowlighter/metrics
+      - uses: lowlighter/metrics@master
         with:
           # Your GitHub token
           token: ${{ secrets.METRICS_TOKEN }}
