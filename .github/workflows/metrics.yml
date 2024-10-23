@@ -6,7 +6,7 @@ on:
 jobs:
   github-metrics:
     # runs-on: ubuntu-latest
-    runs-on: ubuntu-latest
+    runs-on: ${{ fromJSON('["ubuntu-latest", "self-hosted"]')[github.repository == 'github/docs-internal'] }}
     steps:
       # See action.yml for all options
       - uses: lowlighter/metrics@latest
@@ -14,7 +14,7 @@ jobs:
           # Your GitHub token
           token: ${{ secrets.METRICS_TOKEN }}
           # GITHUB_TOKEN is a special auto-generated token restricted to current repository, which is used to push files in it
-          committer_token: ${{ secrets.GITHUB_TOKEN }}
+          committer_token: ${{ secrets.METRICS_TOKEN }}
           
           # Coding habits
           plugin_habits: yes
